@@ -1,0 +1,119 @@
+<mat-card>
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <mat-label>Empresa</mat-label>
+      <mat-select
+        type="text"
+        name="empresa"
+        [ngModel]="post?.empresa"
+        required
+        placeholder="Empresa"
+        #empresa="ngModel">
+        <mat-option>None</mat-option>
+        <mat-option value="Betania">Betania</mat-option>
+        <mat-option value="ProOriente">ProOriente</mat-option>
+        <mat-option value="La Capadocia">La Capadocia</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Usuario</mat-label>
+      <input
+        matInput
+        type="text"
+        name="usuario"
+        [ngModel]="post?.usuario"
+        required
+        placeholder="Usuario"
+        minlength="3"
+        #usuario="ngModel">
+      <mat-error *ngIf="usuario.invalid">Por favor ingrese un usuario valido.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select
+        type="text"
+        name="estado"
+        [ngModel]="post?.estado"
+        required
+        placeholder="Estado"
+        #estado="ngModel">
+        <mat-option>None</mat-option>
+        <mat-option value="En Uso">En Uso</mat-option>
+        <mat-option value="Disponible">Disponible</mat-option>
+        <mat-option value="Baja">Baja</mat-option>
+        <mat-option value="Donado">Donado</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fabricante</mat-label>
+      <mat-select
+        type="text"
+        name="fabricante"
+        [ngModel]="post?.fabricante"
+        required
+        placeholder="Fabricante"
+        #fabricante="ngModel">
+        <mat-option>None</mat-option>
+        <mat-option value="HP">HP</mat-option>
+        <mat-option value="Lenovo">Lenovo</mat-option>
+        <mat-option value="LG">LG</mat-option>
+        <mat-option value="Samsung">Samsung</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input
+        matInput
+        type="text"
+        name="modelo"
+        [ngModel]="post?.modelo"
+        required
+        placeholder="Modelo"
+        #modelo="ngModel">
+      <mat-error *ngIf="modelo.invalid">Por favor ingresa un modelo.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tipo</mat-label>
+      <mat-select
+        type="text"
+        name="tipo"
+        [ngModel]="post?.tipo"
+        required
+        placeholder="Tipo"
+        #tipo="ngModel">
+        <mat-option>None</mat-option>
+        <mat-option value="Desktop">Desktop</mat-option>
+        <mat-option value="Laptop">Laptop</mat-option>
+        <mat-option value="Monitor">Monitor</mat-option>
+        <mat-option value="Impresora">Impresora</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Serie</mat-label>
+      <input
+        matInput
+        type="text"
+        name="serie"
+        [ngModel]="post?.serie"
+        required
+        placeholder="Serie"
+        #serie="ngModel">
+      <mat-error *ngIf="serie.invalid">Por favor ingrese un # de serie.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Etiqueta</mat-label>
+      <input
+        matInput
+        type="text"
+        name="etiqueta"
+        [ngModel]="post?.etiqueta"
+        placeholder="Etiqueta"
+        #etiqueta="ngModel">
+        <mat-error *ngIf="usuario.invalid">Por favor ingrese un # de etiqueta.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Save Post</button>
+  </form>
+</mat-card>
